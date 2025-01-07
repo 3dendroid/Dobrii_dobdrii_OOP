@@ -4,7 +4,7 @@ class SingletonFive:
 
     def __new__(cls, *args, **kwargs):
         if cls.__count < 5:
-            cls.__instance = super ().__new__ (cls)
+            cls.__instance = super().__new__(cls)
             cls.__count += 1
         return cls.__instance
 
@@ -12,4 +12,4 @@ class SingletonFive:
         self.name = name
 
 
-objs = [SingletonFive (str (n)) for n in range (10)]
+objs = [SingletonFive(str(n)) for n in range(10)]

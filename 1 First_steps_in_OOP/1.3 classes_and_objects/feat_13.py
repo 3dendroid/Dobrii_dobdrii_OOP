@@ -5,4 +5,4 @@ class Point:
 # delattr (Point, "tp")
 # del Point.tp
 
-print (Point.__dict__)
+print(Point.__dict__)

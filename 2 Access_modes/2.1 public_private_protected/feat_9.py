@@ -29,8 +29,8 @@ class LinkedList:
 
     def add_obj(self, obj):
         if self.tail:
-            self.tail.set_next (obj)
-        obj.set_prev (self.tail)
+            self.tail.set_next(obj)
+        obj.set_prev(self.tail)
         self.tail = obj
         if not self.head:
             self.head = obj
@@ -39,9 +39,9 @@ class LinkedList:
         if self.tail is None:
             return None
 
-        prev = self.tail.get_prev ()
+        prev = self.tail.get_prev()
         if prev:
-            prev.set_next (None)
+            prev.set_next(None)
         self.tail = prev
         if self.tail is None:
             self.head = None
@@ -50,6 +50,6 @@ class LinkedList:
         s = []
         h = self.head
         while h:
-            s.append (h.get_data ())
-            h = h.get_next ()
+            s.append(h.get_data())
+            h = h.get_next()
         return s

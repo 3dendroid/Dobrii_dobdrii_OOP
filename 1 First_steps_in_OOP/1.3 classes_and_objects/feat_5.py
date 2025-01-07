@@ -11,4 +11,4 @@ Car.color = 'Розовый'
 Car.number = 'П111УУ77'
 
 # print (Car.__dict__['color'])
-print (Car.color)
+print(Car.color)

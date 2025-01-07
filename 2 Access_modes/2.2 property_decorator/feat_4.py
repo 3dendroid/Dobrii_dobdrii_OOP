@@ -8,5 +8,5 @@ class Car:
 
     @model.setter
     def model(self, value):
-        if type (value) == str and 2 <= len (value) <= 100:
+        if type(value) == str and 2 <= len(value) <= 100:
             self.__model = value

@@ -8,4 +8,4 @@ class Goods:
 Goods.price = 2048
 Goods.inflation = 100
 
-print (Goods.__dict__)
+print(Goods.__dict__)

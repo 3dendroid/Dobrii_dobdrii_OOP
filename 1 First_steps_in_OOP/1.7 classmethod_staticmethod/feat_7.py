@@ -4,10 +4,10 @@ from string import ascii_lowercase, digits
 # здесь объявляйте классы TextInput и PasswordInput
 class TextInput:
     CHARS = "абвгдеёжзийклмнопрстуфхцчшщьыъэюя " + ascii_lowercase
-    CHARS_CORRECT = CHARS + CHARS.upper () + digits
+    CHARS_CORRECT = CHARS + CHARS.upper() + digits
 
     def __init__(self, name, size=10):
-        self.check_name (name)
+        self.check_name(name)
         self.name = name
         self.size = size
 
@@ -16,18 +16,18 @@ class TextInput:
 
     @classmethod
     def check_name(cls, name):
-        if type (name) != str or len (name) < 3 or len (name) > 50:
-            raise ValueError ("некорректное поле name")
-        if not set (name) < set (cls.CHARS_CORRECT):
-            raise ValueError ("некорректное поле name")
+        if type(name) != str or len(name) < 3 or len(name) > 50:
+            raise ValueError("некорректное поле name")
+        if not set(name) < set(cls.CHARS_CORRECT):
+            raise ValueError("некорректное поле name")
 
 
 class PasswordInput:
     CHARS = "абвгдеёжзийклмнопрстуфхцчшщьыъэюя " + ascii_lowercase
-    CHARS_CORRECT = CHARS + CHARS.upper () + digits
+    CHARS_CORRECT = CHARS + CHARS.upper() + digits
 
     def __init__(self, name, size=10):
-        self.check_name (name)
+        self.check_name(name)
         self.name = name
         self.size = size
 
@@ -36,10 +36,10 @@ class PasswordInput:
 
     @classmethod
     def check_name(cls, name):
-        if type (name) != str or len (name) < 3 or len (name) > 50:
-            raise ValueError ("некорректное поле name")
-        if not set (name) < set (cls.CHARS_CORRECT):
-            raise ValueError ("некорректное поле name")
+        if type(name) != str or len(name) < 3 or len(name) > 50:
+            raise ValueError("некорректное поле name")
+        if not set(name) < set(cls.CHARS_CORRECT):
+            raise ValueError("некорректное поле name")
 
 
 class FormLogin:
@@ -48,9 +48,9 @@ class FormLogin:
         self.password = psw
 
     def render_template(self):
-        return "\n".join (['<form action="#">', self.login.get_html (), self.password.get_html (), '</form>'])
+        return "\n".join(['<form action="#">', self.login.get_html(), self.password.get_html(), '</form>'])
 
 
 # эти строчки не менять
-login = FormLogin (TextInput ("Логин"), PasswordInput ("Пароль"))
-html = login.render_template ()
+login = FormLogin(TextInput("Логин"), PasswordInput("Пароль"))
+html = login.render_template()

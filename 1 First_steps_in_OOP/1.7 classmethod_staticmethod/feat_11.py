@@ -3,13 +3,13 @@ class Viber:
 
     @classmethod
     def add_message(cls, msg):
-        cls.msgs[id (msg)] = msg
+        cls.msgs[id(msg)] = msg
 
     @classmethod
     def remove_message(cls, msg):
-        key = id (msg)
+        key = id(msg)
         if key in cls.msgs:
-            cls.msgs.pop (key)
+            cls.msgs.pop(key)
 
     @classmethod
     def set_like(cls, msg):
@@ -17,12 +17,12 @@ class Viber:
 
     @classmethod
     def show_last_message(cls, number):
-        for m in tuple (cls.msgs.values ())[-number:]:
-            print (m)
+        for m in tuple(cls.msgs.values())[-number:]:
+            print(m)
 
     @classmethod
     def total_messages(cls):
-        return len (cls.msgs)
+        return len(cls.msgs)
 
 
 class Message:

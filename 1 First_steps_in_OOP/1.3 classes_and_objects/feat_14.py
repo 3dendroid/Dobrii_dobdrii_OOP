@@ -3,4 +3,4 @@ class Magazine:
     price: int = 1101
 
 
-print (getattr (Magazine, 'id'))
+print(getattr(Magazine, 'id'))

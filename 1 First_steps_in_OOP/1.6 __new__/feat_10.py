@@ -5,6 +5,7 @@ class Factory:
     def build_number(self, string):
         return float(string)
 
+
 class Loader:
     def parse_format(self, string, factory):
         seq = factory.build_sequence()

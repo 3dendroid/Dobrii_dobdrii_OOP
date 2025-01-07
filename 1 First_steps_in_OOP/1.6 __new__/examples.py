@@ -35,7 +35,7 @@ class DataBase:
 
     def __new__(cls, *args, **kwargs):
         if cls.__instance is None:
-            cls.__instance = super ().__new__ (cls)
+            cls.__instance = super().__new__(cls)
         return cls.__instance
 
     def __del__(self):
@@ -47,22 +47,22 @@ class DataBase:
         self.port = port
 
     def connect(self):
-        print (f'Connecting to DataBase: {self.user}, {self.psw}, {self.port}')
+        print(f'Connecting to DataBase: {self.user}, {self.psw}, {self.port}')
 
     def close(self):
-        print ('closing')
+        print('closing')
 
     def read(self):
         return 'data from db'
 
     def write(self, data):
-        print (f'writing {data} to db')
+        print(f'writing {data} to db')
 
 
-db = DataBase ('root', '123', 3306)
-db2 = DataBase ('root2', '555', 8888)
+db = DataBase('root', '123', 3306)
+db2 = DataBase('root2', '555', 8888)
 
-print (id (db), id (db2))
+print(id(db), id(db2))
 
-db.connect ()
-db2.connect ()
+db.connect()
+db2.connect()

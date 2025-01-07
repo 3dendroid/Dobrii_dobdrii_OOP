@@ -6,8 +6,8 @@ class Book:  # name of class
         pass
 
 
-book_1 = Book ()  # object of class (examples of classes)
-book_2 = Book ()
+book_1 = Book()  # object of class (examples of classes)
+book_2 = Book()
 
 book_1.year = 2024  # local attributes of class
 book_1.name = 'Book of Jungle'

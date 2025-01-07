@@ -11,27 +11,27 @@ class EmailValidator:
 
     @classmethod
     def check_email(cls, email):
-        if not cls.__is_email_str (email):
+        if not cls.__is_email_str(email):
             return False
-        if not set (email) < set (cls.EMAIL_CHARS):
+        if not set(email) < set(cls.EMAIL_CHARS):
             return False
-        s = email.split ('@')
-        if len (s) != 2:
+        s = email.split('@')
+        if len(s) != 2:
             return False
-        if len (s[0]) > 100 or len (s[1]) > 50:
+        if len(s[0]) > 100 or len(s[1]) > 50:
             return False
         if '.' not in s[1]:
             return False
-        if email.count ('..') > 0:
+        if email.count('..') > 0:
             return False
         return True
 
     @staticmethod
     def __is_email_str(email):
-        return type (email) == str
+        return type(email) == str
 
     @classmethod
     def get_random_email(cls):
-        n = randint (4, 20)
-        length = len (cls.EMAIL_RANDOM_CHARS) - 1
-        return "".join (cls.EMAIL_CHARS[randint (0, length)] for i in range (n)) + '@gmail.com'
+        n = randint(4, 20)
+        length = len(cls.EMAIL_RANDOM_CHARS) - 1
+        return "".join(cls.EMAIL_CHARS[randint(0, length)] for i in range(n)) + '@gmail.com'

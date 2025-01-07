@@ -5,5 +5,5 @@ class Point:
         self.color = color
 
 
-points = [Point (i, i) for i in range (1, 2000, 2)]
+points = [Point(i, i) for i in range(1, 2000, 2)]
 points[1].color = 'yellow'

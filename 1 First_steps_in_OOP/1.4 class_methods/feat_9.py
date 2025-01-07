@@ -10,12 +10,12 @@ class DataBase:
 
     def insert(self, data):
         for x in data:
-            self.lst_data.append (dict (zip (self.FIELDS, x.split ())))
+            self.lst_data.append(dict(zip(self.FIELDS, x.split())))
 
     def select(self, a, b):
         return self.lst_data[a:b + 1]
 
 
-db = DataBase ()
-db.insert (lst_in)
-print (db.lst_data)
+db = DataBase()
+db.insert(lst_in)
+print(db.lst_data)

@@ -21,7 +21,7 @@ class MotherBoard:
         return [f'Материнская плата:{self.name}',
                 f'Центральный процессор: {self.cpu.name}, {self.cpu.fr}',
                 f'Слотов памяти: {self.total_mem_slots}',
-                f'Память: {"; ".join (f"{item.name} - {item.volume}" for item in self.mem_slots)}']
+                f'Память: {"; ".join(f"{item.name} - {item.volume}" for item in self.mem_slots)}']
 
 
-mb = MotherBoard ('GigaByte', CPU ('Intel', 2000), Memory ('Kingston', 3600), Memory ('Kingston', 3600))
+mb = MotherBoard('GigaByte', CPU('Intel', 2000), Memory('Kingston', 3600), Memory('Kingston', 3600))

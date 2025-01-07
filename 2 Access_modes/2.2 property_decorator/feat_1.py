@@ -8,8 +8,8 @@ class Money:
     def get_money(self):
         return self.__money
 
-    money = property (get_money, set_money)
+    money = property(get_money, set_money)
 
 
-m = Money ()
+m = Money()
 m.money = 10

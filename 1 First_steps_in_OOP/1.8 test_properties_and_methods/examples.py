@@ -8,15 +8,15 @@ class Router:
         server.router = self
 
     def unlink(self, server):
-        s = self.servers.pop (server.ip, False)
+        s = self.servers.pop(server.ip, False)
         if s:
             s.router = None
 
     def send_data(self):
         for d in self.buffer:
             if d.ip in self.servers:
-                self.servers[d.ip].buffer.append (d)
-        self.buffer.clear ()
+                self.servers[d.ip].buffer.append(d)
+        self.buffer.clear()
 
 
 class Server:
@@ -30,11 +30,11 @@ class Server:
 
     def send_data(self, data):
         if self.router:
-            self.router.buffer.append (data)
+            self.router.buffer.append(data)
 
     def get_data(self):
         b = self.buffer[:]
-        self.buffer.clear ()
+        self.buffer.clear()
         return b
 
     def get_ip(self):

@@ -16,7 +16,7 @@ class Person:
         del self.__old
 
 
-p = Person ('Denis', 22)
+p = Person('Denis', 22)
 del p.old
 # p.get_old = 31
-print (p.__dict__)
+print(p.__dict__)

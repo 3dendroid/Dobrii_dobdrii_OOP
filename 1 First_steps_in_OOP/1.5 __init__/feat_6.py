@@ -7,37 +7,37 @@ class Graph:
         self.data = data[:]
 
     def _show_closed_graph(self):
-        print ("Отображение данных закрыто")
+        print("Отображение данных закрыто")
 
     def _get_str_data(self):
-        return " ".join (map (str, self.data))
+        return " ".join(map(str, self.data))
 
     def show_table(self):
         if self.is_show:
-            print (self._get_str_data ())
+            print(self._get_str_data())
         else:
-            self._show_closed_graph ()
+            self._show_closed_graph()
 
     def show_graph(self):
         if self.is_show:
-            print (f"Графическое отображение данных: {self._get_str_data ()}")
+            print(f"Графическое отображение данных: {self._get_str_data()}")
         else:
-            self._show_closed_graph ()
+            self._show_closed_graph()
 
     def show_bar(self):
         if self.is_show:
-            print (f"Столбчатая диаграмма: {self._get_str_data ()}")
+            print(f"Столбчатая диаграмма: {self._get_str_data()}")
         else:
-            self._show_closed_graph ()
+            self._show_closed_graph()
 
     def set_show(self, fl_show):
         self.is_show = fl_show
 
 
 # считывание списка из входного потока (эту строку не менять)
-data_graph = list (map (int, input ().split ()))
+data_graph = list(map(int, input().split()))
 
-gr = Graph (data_graph)
-gr.show_bar ()
-gr.set_show (False)
-gr.show_table ()
+gr = Graph(data_graph)
+gr.show_bar()
+gr.set_show(False)
+gr.show_table()

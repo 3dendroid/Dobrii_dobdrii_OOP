@@ -4,8 +4,7 @@ class Loader:
         return ""
 
 
-ld = Loader ()
-
+ld = Loader()
 
 Loader.json_parse()
 ld.json_parse()

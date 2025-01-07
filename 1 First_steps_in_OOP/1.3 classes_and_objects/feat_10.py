@@ -4,9 +4,9 @@ class Person:
     city: str = 'Москва'
 
 
-p1 = Person ()
+p1 = Person()
 
-if hasattr (p1, 'job') in p1.__dict__:
-    print (True)
+if hasattr(p1, 'job') in p1.__dict__:
+    print(True)
 else:
-    print (False)
+    print(False)
