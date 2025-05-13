@@ -1,1 +1,75 @@
-# NEXT
+class Dimensions:
+    MIN_DIMENSION = 10
+    MAX_DIMENSION = 10000
+
+    def __init__(self, a, b, c):
+        self.__a = self.__check_value(a)
+        self.__b = self.__check_value(b)
+        self.__c = self.__check_value(c)
+
+    def __check_value(self, value):
+        if self.MIN_DIMENSION <= value <= self.MAX_DIMENSION:
+            return value
+        return self.MIN_DIMENSION  # или можно оставить значение без изменения при установке
+
+    @property
+    def a(self):
+        return self.__a
+
+    @a.setter
+    def a(self, value):
+        if self.MIN_DIMENSION <= value <= self.MAX_DIMENSION:
+            self.__a = value
+
+    @property
+    def b(self):
+        return self.__b
+
+    @b.setter
+    def b(self, value):
+        if self.MIN_DIMENSION <= value <= self.MAX_DIMENSION:
+            self.__b = value
+
+    @property
+    def c(self):
+        return self.__c
+
+    @c.setter
+    def c(self, value):
+        if self.MIN_DIMENSION <= value <= self.MAX_DIMENSION:
+            self.__c = value
+
+    def get_volume(self):
+        return self.__a * self.__b * self.__c
+
+    # операторы сравнения по объему
+    def __ge__(self, other):
+        return self.get_volume() >= other.get_volume()
+
+    def __gt__(self, other):
+        return self.get_volume() > other.get_volume()
+
+    def __le__(self, other):
+        return self.get_volume() <= other.get_volume()
+
+    def __lt__(self, other):
+        return self.get_volume() < other.get_volume()
+
+
+class ShopItem:
+    def __init__(self, name, price, dim: Dimensions):
+        self.name = name
+        self.price = price
+        self.dim = dim
+
+
+# создание исходного списка товаров
+lst_shop = [
+    ShopItem("кеды", 1024, Dimensions(40, 30, 120)),
+    ShopItem("зонт", 500.24, Dimensions(10, 20, 50)),
+    ShopItem("холодильник", 40000, Dimensions(2000, 600, 500)),
+    ShopItem("табуретка", 2000.99, Dimensions(500, 200, 200))
+]
+
+# сортировка по объему
+lst_shop_sorted = sorted(lst_shop, key=lambda item: item.dim.get_volume())
