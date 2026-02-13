@@ -1,1 +1,36 @@
-# NEXT
+class Goods:
+    def __init__(self, name, weight, price):
+        super().__init__()
+        print("Init Goods")
+        self.name = name
+        self.weight = weight
+        self.price = price
+
+    def print_info(self):
+        print(f"Name: {self.name}, Weight: {self.weight}, Price: {self.price}")
+
+
+class MixinLog:
+    ID = 0
+
+    def __init__(self):
+        print("Init MixinLog")
+        self.ID += 1
+        self.id = self.ID
+
+    def save_sell_log(self):
+        print(f"{self.ID}: товар был продан в 00:00 часов")
+
+    def print_info(self):
+        print("print_info из MixinLog")
+
+
+class Laptop(Goods, MixinLog):
+    def print_info(self):
+        MixinLog.print_info(self)
+
+
+n = Laptop("Acer", 1.5, 30000)
+n.print_info()
+n.save_sell_log()
+print(Laptop.__mro__)
