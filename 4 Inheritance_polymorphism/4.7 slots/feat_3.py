@@ -6,8 +6,9 @@ class Money:
 
 
 class MoneyR(Money):
-    pass
+    __slots__ = '_value',
 
 
 m = MoneyR(10)
-m.s = 100
+m._money = 100
+m._value = 20
